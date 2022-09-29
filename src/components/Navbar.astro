@@ -1,0 +1,85 @@
+---
+import Icon from 'astro-icon'
+const navLinks = [
+  {
+    name: 'Home',
+    url: '/',
+    style: 'transparent',
+  },
+  {
+    name: 'Projects',
+    url: '#',
+    style: 'transparent',
+  },
+  {
+    name: 'Posts',
+    url: '#',
+    style: 'transparent',
+  },
+  {
+    name: 'Contact',
+    url: '#',
+    style: 'primary',
+  },
+]
+---
+
+<style>
+  .btn {
+    display: block;
+  }
+  .nav-main {
+    padding: 1em 2em;
+    background-color: #333;
+    color: cornsilk;
+  }
+  .nav-main__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-main a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .nav-main__title {
+    display: flex;
+  }
+  .nav-main__logo {
+    margin-right: 0.2em;
+    transition: transform 120ms ease;
+  }
+  .nav-main__title:hover .nav-main__logo {
+    transform: rotate(20deg);
+  }
+  .nav-main__center,
+  .nav-main__right {
+    display: flex;
+  }
+</style>
+
+<nav class='nav-main' aria-label='Main'>
+  <div class='nav-main__container'>
+    <div class='nav-main__left'>
+      <h1>
+        <a href='/' class='nav-main__title'>
+          <Icon
+            pack='ph'
+            name='hand-waving-light'
+            width={24}
+            class='nav-main__logo'
+          />
+          Kyle Lynch
+        </a>
+      </h1>
+    </div>
+    <div class='nav-main__center'></div>
+    <div class='nav-main__right'>
+      <button aria-label='Color Mode'>
+        <Icon pack='ph' name='lightbulb-filament-thin' width={36} />
+      </button>
+      <button class='btn' aria-label='Options'>
+        <Icon pack='ph' name='list' width={36} />
+      </button>
+    </div>
+  </div>
+</nav>
