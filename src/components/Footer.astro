@@ -1,0 +1,17 @@
+---
+---
+
+<div class='footer'>
+  <small>&copy; <span id='year'></span> Kyle Lynch. All Rights Reserved.</small>
+</div>
+
+<style>
+  .footer {
+    text-align: center;
+    color: var(--gray-6);
+  }
+</style>
+
+<script is:inline>
+  document.getElementById('year').textContent = new Date().getFullYear()
+</script>

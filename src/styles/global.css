@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700&display=swap');
+
+/* BASE CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Maven Pro', sans-serif;
+  max-width: 2000px;
+  min-height: 100vh;
+  background-color: hsl(var(--clr-bg));
+  color: hsl(var(--clr-text));
+  font-weight: var(--font-weight-4);
+  text-rendering: optimizeSpeed;
+  line-height: var(--font-lineheight-3);
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+a {
+  color: hsl(var(--clr-text));
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ROOT STYLE VARIABLES */
+:root {
+  /* COLORS */
+  /* Light Mode */
+  --text-light: 220 26% 14%;
+  --bg-light: 34 41% 90%;
+  --banner-light: 0 0% 100%;
+  --bulb-light: var(--violet-4);
+
+  /* Dark Mode */
+  --text-dark: 0 0% 93%;
+  --bg-dark: 240 4% 13%;
+  --bulb-dark: var(--orange-3);
+}
+
+/* Dark/Light Mode System Changer */
+@media (prefers-color-scheme: light) {
+  :root {
+    --clr-text: var(--text-light);
+    --clr-bg: var(--bg-light);
+    --clr-banner: var(--banner-light);
+    --clr-bulb: var(--bulb-light);
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-text: var(--text-dark);
+    --clr-bg: var(--bg-dark);
+    --clr-banner: var(--bg-dark);
+    --clr-bulb: var(--bulb-dark);
+    color-scheme: dark;
+  }
+}
+
+:root[color-scheme='light'] {
+  --clr-text: var(--text-light);
+  --clr-bg: var(--bg-light);
+  --clr-banner: var(--banner-light);
+  --clr-bulb: var(--bulb-light);
+  color-scheme: light;
+}
+
+:root[color-scheme='dark'] {
+  --clr-text: var(--text-dark);
+  --clr-bg: var(--bg-dark);
+  --clr-banner: var(--bg-dark);
+  --clr-bulb: var(--bulb-dark);
+  color-scheme: dark;
+}
+
+/* Utilities */
+.hidden {
+  display: none;
+}
+
+.btn {
+  cursor: pointer;
+}

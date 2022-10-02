@@ -1,0 +1,61 @@
+---
+import Icon from 'astro-icon'
+---
+
+<button
+  aria-label='Toggle color mode'
+  onclick='handleToggleClick()'
+  class='btn btn--color-mode'
+>
+  <Icon
+    pack='ph'
+    name='lightbulb-filament-thin'
+    width={28}
+    class='lightbulb-on'
+  />
+  <Icon
+    pack='ph'
+    name='lightbulb-filament-fill'
+    width={28}
+    class='lightbulb-off hidden'
+  />
+</button>
+
+<style>
+  .btn--color-mode {
+    inline-size: var(--size-8);
+    block-size: var(--size-8);
+    background-color: var(--clr-bulb);
+    border: 0;
+    border-radius: var(--radius-2);
+    display: grid;
+    place-items: center;
+    transition: 200ms ease;
+  }
+
+  .btn--color-mode:hover {
+    filter: brightness(90%);
+  }
+</style>
+
+<script is:inline>
+  const handleToggleClick = () => {
+    const scheme = document.documentElement.getAttribute('color-scheme')
+    const isDark = scheme !== null && scheme === 'dark'
+    const bulbOn = document.querySelector('.lightbulb-on')
+    const bulbOff = document.querySelector('.lightbulb-off')
+
+    //  toggle global color theme //
+    document.documentElement.setAttribute(
+      'color-scheme',
+      isDark ? 'light' : 'dark'
+    )
+
+    // toggle bulb icons according to color theme //
+    bulbOn.classList.toggle('hidden')
+    bulbOff.classList.toggle('hidden')
+
+    // save color scheme/theme in local storage //
+    localStorage.setItem('theme', isDark ? 'light' : 'dark')
+  }
+</script>

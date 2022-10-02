@@ -1,5 +1,7 @@
 ---
 import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/global.css'
 const { title = "Kyle's Portfolio" } = Astro.props
 ---
 
@@ -13,21 +15,40 @@ const { title = "Kyle's Portfolio" } = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <Navbar />
-    <slot />
-    <style is:global>
-      :root {
+    <header>
+      <Navbar />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+    <script is:inline>
+      const setTheme = () => {
+        // Pull color scheme/theme from local storage and set it upon DOM load, if null then set it to dark theme //
+        const theme = localStorage.getItem('theme')
+        const bulbOn = document.querySelector('.lightbulb-on')
+        const bulbOff = document.querySelector('.lightbulb-off')
+
+        document.addEventListener('DOMContentLoaded', () => {
+          document.documentElement.setAttribute(
+            'color-scheme',
+            !theme ? 'dark' : theme
+          )
+        })
+
+        // display appropriate bulb icons according to color theme upon initial page load //
+        if (theme === 'light') {
+          bulbOn.classList.add('hidden')
+          bulbOff.classList.remove('hidden')
+        } else {
+          bulbOn.classList.remove('hidden')
+          bulbOff.classList.add('hidden')
+        }
       }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        margin: 0;
-      }
-    </style>
+
+      setTheme()
+    </script>
   </body>
 </html>
