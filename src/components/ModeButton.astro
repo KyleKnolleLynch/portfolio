@@ -23,14 +23,14 @@ import Icon from 'astro-icon'
 
 <style>
   .btn--color-mode {
-    inline-size: var(--size-8);
-    block-size: var(--size-8);
+    width: var(--size-8);
+    aspect-ratio: 1;
     background-color: var(--clr-bulb);
     border: 0;
     border-radius: var(--radius-2);
     display: grid;
     place-items: center;
-    transition: 200ms ease;
+    transition: filter 200ms ease;
   }
 
   .btn--color-mode:hover {

@@ -15,15 +15,19 @@ const { title = "Kyle's Portfolio" } = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <header>
-      <Navbar />
-    </header>
+    <Navbar />
     <main>
       <slot />
     </main>
-    <footer>
-      <Footer />
-    </footer>
+    <Footer />
+    <style>
+      main {
+        margin: auto;
+        padding: 1.5rem;
+        max-width: 60ch;
+      }
+    </style>
+
     <script is:inline>
       const setTheme = () => {
         // Pull color scheme/theme from local storage and set it upon DOM load, if null then set it to dark theme //

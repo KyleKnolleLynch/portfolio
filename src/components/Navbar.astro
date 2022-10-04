@@ -25,104 +25,168 @@ const navLinks = [
 ]
 ---
 
-<nav class='nav-main' aria-label='Main'>
-  <div class='nav-main__container'>
-    <div class='nav-main__left'>
-      <h1>
-        <a href='/' class='nav-main__title'>
-          <Icon
-            pack='ph'
-            name='hand-waving-light'
-            width={24}
-            class='nav-main__logo'
-          />
-          Kyle Lynch
-        </a>
-      </h1>
-    </div>
-    <div class='nav-main__center'>
-      <ul class='nav-main__links' role='navigation'>
-        {
-          navLinks.map(link => (
-            <li role='none'>
-              <a href={link.url} class='btn btn--${link.style} nav-link'>
-                {link.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-    <div class='nav-main__right'>
-      <ModeButton />
-      <button
-        class='btn btn--menu'
-        id='nav-menu-btn'
-        aria-label='Open mobile navigation'
-        aria-expanded='false'
-      >
-        <Icon pack='ph' name='list' width={24} />
-      </button>
-    </div>
+<header class='header'>
+  <h1>
+    <a href='/' class='header__title' aria-label='Return to home page'>
+      <Icon
+        pack='ph'
+        name='hand-waving-light'
+        width={24}
+        class='header__logo'
+      />
+      Kyle Lynch
+    </a>
+  </h1>
+  <nav aria-label='Main'>
+    <ul class='header__nav' id='primary-navigation' data-visible='false'>
+      {
+        navLinks.map(link => (
+          <li role='none'>
+            <a
+              href={link.url}
+              class='btn btn--${link.style} header__nav-link'
+            >
+              {link.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class='header__buttons-wrapper'>
+    <ModeButton />
+    <button
+      class='btn btn--nav-toggle'
+      id='nav-menu-btn'
+      aria-label='Open mobile navigation'
+      aria-controls='primary-navigation'
+      aria-expanded='false'
+    >
+      <Icon pack='ph' name='list' width={24} />
+    </button>
   </div>
-</nav>
+</header>
 
 <style>
-  .nav-main {
-    padding: var(--size-fluid-2);
-    background-color: hsl(var(--clr-banner) / 40%);
-    color: hsl(var(--clr-text));
-    backdrop-filter: blur(10px);
-    z-index: var(--layer-5);
-    position: sticky;
-    top: 0;
-  }
-
-  .nav-main__container {
+  .header {
+    padding-block: var(--size-fluid-1);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: var(--size-fluid-4);
+    background-color: var(--clr-banner);
+    color: hsl(var(--clr-text));
+    backdrop-filter: blur(1rem);
+    z-index: var(--layer-3);
   }
 
-  .nav-main__title {
-    display: flex;
-    font-size: var(--font-size-fluid-2);
+  .header a {
+    text-decoration: none;
+    font-weight: 700;
+    color: hsl(var(--clr-text));
   }
-  .nav-main__logo {
+
+  .header__title {
+    display: flex;
+    font-size: var(--font-size-fluid-1);
+  }
+  .header__logo {
     margin-right: 0.2em;
     transition: transform 120ms ease;
   }
-  .nav-main__title:hover .nav-main__logo {
+  .header__title:hover .header__logo {
     transform: rotate(20deg);
   }
-  .nav-main__links {
-    display: flex;
-    flex-direction: column;
-    transform: translateY(-200%);
-  }
-
-  .nav-main__right {
+  .header__nav {
     display: flex;
     gap: 1em;
+    list-style: none;
   }
 
-  .btn--menu {
-    inline-size: var(--size-8);
-    block-size: var(--size-8);
-    border: var(--border-size-1) solid hsl(var(--clr-text) / 0.1);
-    border-radius: var(--radius-2);
-    display: grid;
-    place-items: center;
-    background-color: transparent;
+  .header__nav-link {
+    margin-inline-end: var(--size-3);
+    position: relative;
+  }
+
+  .header__nav-link::before {
+    content: '';
+    display: block;
+    height: var(--border-size-2);
+    background-color: hsl(var(--clr-text));
+    position: absolute;
+    top: 1.3em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform 200ms ease-out;
+  }
+
+  .header__nav-link:hover::before {
+    transform: scale(1, 1);
+  }
+
+  .header__buttons-wrapper {
+    display: flex;
+    gap: 1em;
+    flex-basis: 10%;
+    justify-content: flex-end;
+    z-index: var(--layer-5);
+  }
+
+  .btn--nav-toggle {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .header {
+      justify-content: space-around;
+    }
+
+    .header__nav {
+      min-height: 100vh;
+      position: fixed;
+      inset: 0;
+      flex-direction: column;
+      align-items: center;
+      padding-top: min(25vh, 10rem);
+      background-color: hsl(var(--clr-bg) / 80%);
+      backdrop-filter: blur(1rem);
+      opacity: 0;
+      z-index: var(--layer-4);
+      transform: translate(100%, -100%);
+      transition: all 200ms ease-out;
+    }
+
+    .header__nav[data-visible='true'] {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    .btn--nav-toggle {
+      display: block;
+      width: var(--size-8);
+      aspect-ratio: 1;
+      border: var(--border-size-1) solid hsl(var(--clr-text) / 0.1);
+      border-radius: var(--radius-2);
+      display: grid;
+      place-items: center;
+      background-color: transparent;
+    }
   }
 </style>
 
 <script is:inline>
-  const navMenuBtn = document.getElementById('nav-menu-btn')
-  navMenuBtn.addEventListener('click', () => {
-    navMenuBtn.setAttribute(
-      'aria-expanded',
-      navMenuBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
-    )
+  const primaryNav = document.getElementById('primary-navigation')
+  const navToggle = document.querySelector('.btn--nav-toggle')
+  navToggle.addEventListener('click', () => {
+    const visibility = primaryNav.getAttribute('data-visible')
+    if (visibility === 'false') {
+      primaryNav.setAttribute('data-visible', 'true')
+      navToggle.setAttribute('aria-expanded', 'true')
+    } else if (visibility === 'true') {
+      primaryNav.setAttribute('data-visible', 'false')
+      navToggle.setAttribute('aria-expanded', 'false')
+    }
   })
 </script>

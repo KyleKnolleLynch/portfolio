@@ -21,18 +21,13 @@ body {
   color: hsl(var(--clr-text));
   font-weight: var(--font-weight-4);
   text-rendering: optimizeSpeed;
-  line-height: var(--font-lineheight-3);
+  line-height: var(--font-lineheight-4);
+  overflow-x: hidden;
 }
 
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
-}
-
-a {
-  color: hsl(var(--clr-text));
-  font-weight: 700;
-  text-decoration: none;
 }
 
 a:not([class]) {
@@ -74,12 +69,13 @@ svg {
   /* Light Mode */
   --text-light: 220 26% 14%;
   --bg-light: 34 41% 90%;
-  --banner-light: 0 0% 100%;
+  --banner-light: hsl(var(--gray-0-hsl) / 40%);
   --bulb-light: var(--violet-4);
 
   /* Dark Mode */
   --text-dark: 0 0% 93%;
   --bg-dark: 240 4% 13%;
+  --banner-dark: hsl(var(--gray-0-hsl) / 4%);
   --bulb-dark: var(--orange-3);
 }
 
@@ -98,7 +94,7 @@ svg {
   :root {
     --clr-text: var(--text-dark);
     --clr-bg: var(--bg-dark);
-    --clr-banner: var(--bg-dark);
+    --clr-banner: var(--banner-dark);
     --clr-bulb: var(--bulb-dark);
     color-scheme: dark;
   }
@@ -115,7 +111,7 @@ svg {
 :root[color-scheme='dark'] {
   --clr-text: var(--text-dark);
   --clr-bg: var(--bg-dark);
-  --clr-banner: var(--bg-dark);
+  --clr-banner: var(--banner-dark);
   --clr-bulb: var(--bulb-dark);
   color-scheme: dark;
 }
