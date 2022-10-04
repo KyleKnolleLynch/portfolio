@@ -1,10 +1,119 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
+import { Icon } from 'astro-icon'
 ---
 
 <Layout title='Kyle&apos;s Portfolio'>
-  <div>
+  <>
     <Hero />
-  </div>
+    <section class="projects">
+      <h3 class="section--heading">Projects</h3>
+      <p class='projects__body'>I'm self-taught, extremely passionate about learning new technologies, and constantly growing my web development skills. My current focus is the Javascript ecosystem, which I have about three years experience with. I love solving problems and creating cool things with tech I've learned.</p>
+      <p class='projects__link-wrapper'>
+        <a href="/projects" class='projects__link'>My portfolio &gt;</a>
+      </p>
+    </section>
+    <section class='skills'>
+      <h3 class='section--heading'>Skills</h3>
+      <div class='skills__icons'>
+        <Icon name='javascript' />
+        <Icon name='html' />
+        <Icon name='css-3' />
+        <Icon name='react' />
+        <Icon name='nextjs' />
+        <Icon name='sass' />
+        <Icon name='tailwind-css' />
+        <Icon name='nodejs' />
+        <Icon name='mongodb' />
+      </div>
+      <h3 class='section--heading'>Tools</h3>
+      <div class='skills__icons'>
+        <Icon name='git' />
+        <Icon name='npm' />
+        <Icon name='arch-linux' />
+        <Icon name='windows' />
+        <Icon name='vs-code' />
+      </div>
+    </section>
+    
+    <section class="hobbies">
+      <h3 class='section--heading'>I ♥</h3>
+      <div class="grid-2">
+
+      </div>
+    </section>
+  </>
 </Layout>
+
+<style>
+  .section--heading {
+    margin-top: var(--size-5);
+    display: inline-block;
+    position: relative;
+    color: hsl(var(--clr-text));
+  }
+
+  .section--heading::before {
+    content: '';
+    width: 100%;
+    height: var(--size-1);
+    position: absolute;
+    top: 1.3em;
+    left: 0;
+    right: 0;
+    background-color: var(--gray-7);
+  }
+
+  .projects__body {
+    margin-top: var(--size-2);
+  }
+
+  .projects__body:first-letter {
+    margin-left: 2ch;
+  }
+
+  .projects__link-wrapper {
+    text-align: center;
+    margin-top: var(--size-4);
+  }
+
+  .projects__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: var(--size-1) var(--size-6);
+    display: inline-block;
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-7);
+    color: var(--gray-9);
+    background-image: var(--gradient-12), var(--noise-1);
+    filter: var(--noise-filter-1);
+    background-size: cover;
+    border-radius: var(--radius-2);
+    transform: matrix(1,-.08,0,.99,0,0);
+  }
+
+  .skills__icons {
+    margin-top: var(--size-4);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    gap: var(--size-fluid-1);
+  }
+
+  [astro-icon] {
+    width: var(--size-fluid-4);
+    height: var(--size-fluid-4);
+  }
+
+  [astro-icon='nextjs'] {
+    fill: hsl(var(--clr-text));
+  }
+
+  [astro-icon='arch-linux'] {
+    width: 7rem;
+  }
+
+  [astro-icon='windows'] {
+    justify-self: center;
+  }
+</style>

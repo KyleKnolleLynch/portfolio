@@ -1,17 +1,47 @@
 ---
-
 ---
 
 <section class='hero'>
-    <p class='hero__slogan'>Hello, I'm a front-end web developer based in Austin, Texas!</p>
-    <h2>Kyle Lynch</h2>
-
+  <p class='hero__slogan'>
+    Hello, I'm a front-end web developer based in Austin, Texas!
+  </p>
+  <div class='hero__wrapper grid-2'>
+    <article>
+      <h2 class='hero__title'>Kyle Lynch</h2>
+      <p>Web Developer</p>
+    </article>
+    <img src='/assets/profile_headshot.webp' alt='profile_headshot' class='profile-image' />
+  </div>
 </section>
 
 <style>
-    .hero__slogan {
-        padding: var(--size-fluid-1);
-        background-color: var(--clr-banner);
+  .hero__slogan {
+    padding: var(--size-fluid-1);
+    background-color: var(--clr-banner);
+    border-radius: var(--radius-2);
+  }
 
+  .hero__wrapper {
+    margin-top: var(--size-4);
+  }
+
+  .hero__title {
+    font-size: var(--font-size-fluid-2);
+    padding: 0;
+  }
+
+  .profile-image {
+    width: 100px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: var(--border-size-1) solid hsl(var(--clr-text));
+    border-radius: var(--radius-round);
+    justify-self: center;
+  }
+
+  @media (min-width: 768px) {
+    .profile-image {
+        justify-self: flex-end;
     }
+  }
 </style>
