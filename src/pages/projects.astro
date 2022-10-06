@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro'
+const projects = [
+  {
+    url: '#',
+    img: '/assets/blog.webp',
+    title: 'My Blog',
+    desc: 'A customizable blog site using Contentful CMS',
+  },
+  {
+    url: '#',
+    img: '/assets/tech-cart.webp',
+    title: 'Tech Cart',
+    desc: 'An e-commerce shopping cart for a mock tech shop',
+  },
+  {
+    url: '#',
+    img: '/assets/miami-travel.webp',
+    title: 'Miami Travel',
+    desc: 'A mock travel website with live weather and cam feeds',
+  },
+]
+const olderProjects = [
+  {
+    url: '#',
+    img: '/assets/smoothie-mockup.webp',
+    title: 'Smoothie Builder',
+    desc: 'A multi-step smoothie building cart app',
+  },
+  {
+    url: '#',
+    img: '',
+    title: 'Menu App',
+    desc: 'Food menu with filter buttons',
+  },
+]
+---
+
+<Layout title='Kyle&apos;s Projects'>
+  <h2>Projects</h2>
+  <section class='projects--grid grid-2'>
+    {
+      projects.map(project => (
+        <article class='project--card'>
+          <img
+            src={project.img}
+            alt={project.title}
+            class='project--card__img'
+          />
+          <h3 class='project--card__title'>{project.title}</h3>
+          <p class='project--card__desc'>{project.desc}</p>
+          <a
+            href={project.url}
+            aria-label={`Visit ${project.title} details page`}
+            class='project--card__link'
+          />
+        </article>
+      ))
+    }
+  </section>
+  <h2>Older Projects</h2>
+  <section class='projects--grid grid-2'>
+    {
+      olderProjects.map(project => (
+        <article class='project--card'>
+          <img
+            src={project.img}
+            alt={project.title}
+            class='project--card__img'
+          />
+          <h3 class='project--card__title'>{project.title}</h3>
+          <p class='project--card__desc'>{project.desc}</p>
+          <a
+            href={project.url}
+            aria-label={`Visit ${project.title} details page`}
+            class='project--card__link'
+          />
+        </article>
+      ))
+    }
+  </section>
+</Layout>
+
+<style>
+  .projects--grid {
+    row-gap: var(--size-fluid-5);
+    margin-block: var(--size-2) var(--size-10);
+  }
+
+  .project--card {
+    position: relative;
+  }
+
+  .project--card__img {
+    border-radius: var(--radius-2);
+    object-fit: cover;
+  }
+
+  .project--card__title {
+    margin-top: var(--size-2);
+  }
+
+  .project--card__desc {
+    margin-top: var(--size-1);
+  }
+
+  .project--card__link {
+    position: absolute;
+    inset: 0;
+  }
+</style>

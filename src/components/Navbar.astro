@@ -3,24 +3,20 @@ import Icon from 'astro-icon'
 import ModeButton from './ModeButton.astro'
 const navLinks = [
   {
-    name: 'Home',
-    url: '/',
-    style: 'transparent',
-  },
-  {
     name: 'Projects',
-    url: '#',
-    style: 'transparent',
+    url: 'projects',
   },
   {
-    name: 'Posts',
+    name: 'About',
+    url: '/',
+  },
+  {
+    name: 'Uses',
     url: '#',
-    style: 'transparent',
   },
   {
     name: 'Contact',
     url: '#',
-    style: 'primary',
   },
 ]
 ---
@@ -38,15 +34,11 @@ const navLinks = [
     </a>
   </h1>
   <nav aria-label='Main'>
-    <ul
-      class='header__nav'
-      id='primary-navigation'
-      aria-expanded='false'
-    >
+    <ul class='header__nav' id='primary-navigation' aria-expanded='false'>
       {
         navLinks.map(link => (
           <li role='none'>
-            <a href={link.url} class='btn btn--${link.style} header__nav-link'>
+            <a href={link.url} class='header__nav-link' aria-label={`Visit ${link.name} page`}>
               {link.name}
             </a>
           </li>
@@ -77,6 +69,8 @@ const navLinks = [
     background-color: var(--clr-banner);
     color: hsl(var(--clr-text));
     backdrop-filter: blur(1rem);
+    position: sticky;
+    top: 0;
     z-index: var(--layer-3);
   }
 

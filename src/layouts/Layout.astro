@@ -15,13 +15,11 @@ const { title = "Kyle's Portfolio" } = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <div class='app-container'>
       <Navbar />
       <main>
         <slot />
       </main>
       <Footer />
-    </div>
     <style>
       main {
         margin: auto;

@@ -5,13 +5,12 @@ import { Icon } from 'astro-icon'
 ---
 
 <Layout title='Kyle&apos;s Portfolio'>
-  <>
     <Hero />
     <section class="projects">
-      <h3 class="section--heading">Projects</h3>
-      <p class='projects__body'>I'm self-taught, extremely passionate about learning new technologies, and constantly growing my web development skills. My current focus is the Javascript ecosystem, which I have about three years experience with. I love solving problems and creating cool things with tech I've learned.</p>
+      <h3 class="section--heading">Work and Projects</h3>
+      <p class='mt-2 indent'>I'm self-taught, extremely passionate about learning new technologies, and constantly growing my web development skills. My current focus is the Javascript ecosystem, in which I have about three years experience. I love solving problems and creating cool things with tech I've learned.</p>
       <p class='projects__link-wrapper'>
-        <a href="/projects" class='projects__link'>My portfolio &gt;</a>
+        <a href="/projects" class='projects__link' aria-label='Visit my projects page'>My portfolio &gt;</a>
       </p>
     </section>
     <section class='skills'>
@@ -36,14 +35,25 @@ import { Icon } from 'astro-icon'
         <Icon name='vs-code' />
       </div>
     </section>
+
+    <section class='education'>
+      <h3 class="section--heading">Education</h3>
+      <p class="mt-2 indent">
+        I built my first computer in 2018, then started picking up HTML, CSS, and Javascript and joined GitHub. I quickly saw the power and beauty of Javascript and gained the desire to learn as much as possible. I am completely self-trained. The methods I use to learn software, coding, and development/programming principles are reading documentation, building projects, and studying articles and tutorials/courses by experienced developers such as
+      </p>
+      <ul class='education__list'>
+        <li><p>Davy Gray</p></li>
+        <li><p>Shaun Pelling</p></li>
+        <li><p>Akshay Saini</p></li>
+        <li><p>John Smilga</p></li>
+        <li><p>Tomas Weibenfalk</p></li>
+      </ul>
+    </section>
     
     <section class="hobbies">
       <h3 class='section--heading'>I ♥</h3>
-      <div class="grid-2">
-
-      </div>
+      <p class='mt-2 indent'>Learning, coffee, ancient history, working on Subarus, computer hardware</p>
     </section>
-  </>
 </Layout>
 
 <style>
@@ -63,14 +73,6 @@ import { Icon } from 'astro-icon'
     left: 0;
     right: 0;
     background-color: var(--gray-7);
-  }
-
-  .projects__body {
-    margin-top: var(--size-2);
-  }
-
-  .projects__body:first-letter {
-    margin-left: 2ch;
   }
 
   .projects__link-wrapper {
@@ -94,7 +96,7 @@ import { Icon } from 'astro-icon'
   }
 
   .skills__icons {
-    margin-top: var(--size-4);
+    margin-top: var(--size-3);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
     gap: var(--size-fluid-1);
@@ -115,5 +117,9 @@ import { Icon } from 'astro-icon'
 
   [astro-icon='windows'] {
     justify-self: center;
+  }
+
+  .education__list {
+    margin-left: var(--size-3);
   }
 </style>
