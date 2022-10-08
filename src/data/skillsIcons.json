@@ -1,0 +1,38 @@
+[
+    {
+        "name": "javascript",
+        "title": "Javascript"
+    },
+    {
+        "name": "html",
+        "title": "HTML5"
+    },
+    {
+        "name": "css-3",
+        "title": "CSS"
+    },
+    {
+        "name": "react",
+        "title": "React"
+    },
+    {
+        "name": "nextjs",
+        "title": "NextJS"
+    },
+    {
+        "name": "sass",
+        "title": "SASS"
+    },
+    {
+        "name": "tailwind-css",
+        "title": "TailwindCSS"
+    },
+    {
+        "name": "nodejs",
+        "title": "NodeJS"
+    },
+    {
+        "name": "mongodb",
+        "title": "MongoDB"
+    }
+]

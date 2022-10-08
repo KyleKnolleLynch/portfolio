@@ -1,0 +1,22 @@
+[
+    {
+        "name": "git",
+        "title": "Git version control"
+    },
+    {
+        "name": "npm",
+        "title": "Node Package Manager"
+    },
+    {
+        "name": "arch-linux",
+        "title": "Arch Linux"
+    },
+    {
+        "name": "windows",
+        "title": "Windows"
+    },
+    {
+        "name": "vs-code",
+        "title": "Visual Studio Code"
+    }
+]

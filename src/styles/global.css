@@ -91,8 +91,11 @@ aside {
   /* Light Mode */
   --text-light: 220 26% 14%;
   --bg-light: 34 41% 90%;
+  /* --bg-light: 168 50% 60%; */
   --banner-light: hsl(var(--gray-0-hsl) / 40%);
   --bulb-light: var(--violet-4);
+  /* --test: 278 61% 43%; */
+  /* --test-dark: 87 49% 36%; */
 
   /* Dark Mode */
   --text-dark: 0 0% 93%;
@@ -160,6 +163,51 @@ aside {
 
 .indent::first-letter {
   margin-left: 2ch;
+}
+
+/* Single Project Details Pages */
+.project-page__back-link {
+  text-decoration: none;
+  margin-right: 1ch;
+}
+
+.project-page__back-link:hover {
+  text-decoration: underline;
+}
+
+.project-page__title {
+  display: inline-block;
+  margin-left: 1ch;
+}
+
+.project-page__list {
+  list-style: none;
+  margin-top: var(--size-4);
+}
+
+.project-page__list-item {
+  margin-bottom: var(--size-fluid-1);
+}
+
+.project-page__list-tag {
+  margin-right: var(--size-2);
+  padding: 0.1em;
+  text-transform: uppercase;
+  font-size: var(--font-size-0);
+  font-weight: 700;
+  vertical-align: top;
+  border-radius: var(--radius-1);
+  background-color: hsl(var(--test));
+}
+
+.project-page__list-icon {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.project-page__img {
+  margin-top: var(--size-4);
+  border-radius: var(--radius-2);
 }
 
 @media (min-width: 768px) {

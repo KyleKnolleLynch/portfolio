@@ -1,70 +1,86 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
+import skillsIcons from '../data/skillsIcons.json'
+import toolsIcons from '../data/toolsIcons.json'
 import { Icon } from 'astro-icon'
 ---
 
 <Layout title='Kyle&apos;s Portfolio'>
-    <Hero />
-    <section class="projects">
-      <h3 class="section--heading">Work and Projects</h3>
-      <p class='mt-2 indent'>I'm self-taught, extremely passionate about learning new technologies, and constantly growing my web development skills. My current focus is the Javascript ecosystem, in which I have about three years experience. I love solving problems and creating cool things with tech I've learned.</p>
-      <p class='projects__link-wrapper'>
-        <a href="/projects" class='projects__link' aria-label='Visit my projects page'>My portfolio &gt;</a>
-      </p>
-    </section>
-    <section class='skills'>
-      <h3 class='section--heading'>Skills</h3>
-      <div class='skills__icons'>
-        <Icon name='javascript' />
-        <Icon name='html' />
-        <Icon name='css-3' />
-        <Icon name='react' />
-        <Icon name='nextjs' />
-        <Icon name='sass' />
-        <Icon name='tailwind-css' />
-        <Icon name='nodejs' />
-        <Icon name='mongodb' />
-      </div>
-      <h3 class='section--heading'>Tools</h3>
-      <div class='skills__icons'>
-        <Icon name='git' />
-        <Icon name='npm' />
-        <Icon name='arch-linux' />
-        <Icon name='windows' />
-        <Icon name='vs-code' />
-      </div>
-    </section>
+  <Hero />
+  <section class='projects'>
+    <h2 class='section__heading'>Work and Projects</h2>
+    <p class='mt-2 indent'>
+      I'm self-taught, extremely passionate about learning new technologies, and
+      constantly growing my web development skills. My current focus is the
+      Javascript ecosystem, in which I have about three years experience. I love
+      solving problems and creating cool things with tech I've learned.
+    </p>
+    <p class='projects__link-wrapper'>
+      <a
+        href='/projects'
+        class='projects__link'
+        aria-label='Visit my projects page'>My portfolio &gt;</a
+      >
+    </p>
+  </section>
+  <section class='skills'>
+    <h2 class='section__heading'>Skills</h2>
+    <div class='skills__icons'>
+      {skillsIcons.map(icon => <Icon name={icon.name} title={icon.title} />)}
+    </div>
+    <h2 class='section__heading'>Tools</h2>
+    <div class='skills__icons'>
+      {toolsIcons.map(icon => <Icon name={icon.name} title={icon.title} />)}
+    </div>
+  </section>
 
-    <section class='education'>
-      <h3 class="section--heading">Education</h3>
-      <p class="mt-2 indent">
-        I built my first computer in 2018, then started picking up HTML, CSS, and Javascript and joined GitHub. I quickly saw the power and beauty of Javascript and gained the desire to learn as much as possible. I am completely self-trained. The methods I use to learn software, coding, and development/programming principles are reading documentation, building projects, and studying articles and tutorials/courses by experienced developers such as
-      </p>
-      <ul class='education__list'>
-        <li><p>Davy Gray</p></li>
-        <li><p>Shaun Pelling</p></li>
-        <li><p>Akshay Saini</p></li>
-        <li><p>John Smilga</p></li>
-        <li><p>Tomas Weibenfalk</p></li>
-      </ul>
-    </section>
-    
-    <section class="hobbies">
-      <h3 class='section--heading'>I ♥</h3>
-      <p class='mt-2 indent'>Learning, coffee, ancient history, working on Subarus, computer hardware</p>
-    </section>
+  <section class='education'>
+    <h2 class='section__heading'>Education</h2>
+    <p class='mt-2 indent'>
+      I built my first computer in 2018, then started picking up HTML, CSS, and
+      Javascript and joined GitHub. I quickly saw the power and beauty of
+      Javascript and gained the desire to learn as much as possible. I am
+      completely self-trained. The methods I use to learn software, coding, and
+      development/programming principles are reading documentation, building
+      projects, and studying articles and tutorials/courses by experienced
+      developers such as
+    </p>
+    <ul class='education__list'>
+      <li><p>Davy Gray</p></li>
+      <li><p>Shaun Pelling</p></li>
+      <li><p>Akshay Saini</p></li>
+      <li><p>John Smilga</p></li>
+      <li><p>Tomas Weibenfalk</p></li>
+    </ul>
+  </section>
+
+  <section class='weblinks'>
+    <h2 class='section__heading'>On the web</h2>
+    <ul class='mt-2 weblinks__list'>
+      <li><a href="https://github.com/KyleKnolleLynch" class='weblinks__list-link' target='_blank' rel='noopener'><span><Icon name='github' /></span>GitHub</a></li>
+      <li><a href="https://codepen.io/kyleknollelynch" class='weblinks__list-link' target='_blank' rel='noopener'><span><Icon name='codepen' /></span>Codepen</a></li>
+    </ul>
+  </section>
+
+  <section class='hobbies'>
+    <h2 class='section__heading'>I ♥</h2>
+    <p class='mt-2 indent'>
+      Learning, coffee, ancient history, working on Subarus, computer hardware
+    </p>
+  </section>
 </Layout>
 
 <style>
-  .section--heading {
+  .section__heading {
     margin-top: var(--size-5);
     display: inline-block;
     position: relative;
     color: hsl(var(--clr-text));
+    font-size: var(--font-size-3);
   }
 
-  .section--heading::before {
+  .section__heading::before {
     content: '';
     width: 100%;
     height: var(--size-1);
@@ -92,14 +108,14 @@ import { Icon } from 'astro-icon'
     filter: var(--noise-filter-1);
     background-size: cover;
     border-radius: var(--radius-2);
-    transform: matrix(1,-.08,0,.99,0,0);
+    transform: matrix(1, -0.08, 0, 0.99, 0, 0);
   }
 
   .skills__icons {
     margin-top: var(--size-3);
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
-    gap: var(--size-fluid-1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--size-fluid-3);
   }
 
   [astro-icon] {
@@ -115,11 +131,24 @@ import { Icon } from 'astro-icon'
     width: 7rem;
   }
 
-  [astro-icon='windows'] {
-    justify-self: center;
+  [astro-icon='github'],
+  [astro-icon='codepen'] {
+    width: 1.3rem;
   }
 
   .education__list {
     margin-left: var(--size-3);
+  }
+
+  .weblinks__list {
+    list-style-type: none;
+  }
+
+  .weblinks__list-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6em;
+    margin-left: 2ch;
+    color: hsl(var(--test));
   }
 </style>
