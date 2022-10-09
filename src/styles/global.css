@@ -89,22 +89,22 @@ aside {
   /* COLORS */
 
   /* common */
-  --accent: 75 93% 61%;
-  --accent-dark: 75 93% 43%;
+  --clr-accent: 138 97% 45%;
+  --clr-accent-highlight: 141 62% 61%;
+  --clr-secondary: 288 36% 46%;
 
   /* Light Mode */
   --text-light: 220 26% 14%;
-  /* --bg-light: 34 41% 90%; */
-  --bg-light: 340 2% 66%;
+  --bg-light: 0 0% 99%;
   --banner-light: hsl(var(--gray-0-hsl) / 40%);
-  --bulb-light: var(--violet-4);
+  --bulb-light: var(--secondary);
   /* --test-dark: 87 49% 36%; */
 
   /* Dark Mode */
   --text-dark: 0 0% 93%;
   --bg-dark: 240 4% 13%;
   --banner-dark: hsl(var(--gray-0-hsl) / 4%);
-  --bulb-dark: var(--orange-3);
+  --bulb-dark: 245 8% 71%;
 }
 
 /* Dark/Light Mode System Changer */
@@ -149,6 +149,10 @@ aside {
   display: none;
 }
 
+.blurred {
+  backdrop-filter: blur(1rem);
+}
+
 .btn {
   border: 0;
   cursor: pointer;
@@ -172,7 +176,7 @@ aside {
 .project-page__back-link {
   text-decoration: none;
   margin-right: 1ch;
-  color: hsl(var(--accent));
+  color: hsl(var(--clr-accent));
 }
 
 .project-page__back-link:hover {
@@ -201,15 +205,15 @@ aside {
   font-weight: 700;
   vertical-align: top;
   border-radius: var(--radius-1);
-  background-color: hsl(var(--accent-dark) / 0.5);
+  background-color: hsl(var(--clr-secondary) / 0.8);
 }
 
-.project-page__list-item a {
-  color: hsl(var(--accent));
+.project-page a {
+  color: hsl(var(--clr-accent));
   text-decoration: none;
 }
 
-.project-page__list-item a:hover {
+.project-page a:hover {
   text-decoration: underline;
 }
 

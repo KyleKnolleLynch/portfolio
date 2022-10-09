@@ -21,7 +21,7 @@ const navLinks = [
 ]
 ---
 
-<header class='header'>
+<header class='header blurred'>
     <a href='/' class='header__title' aria-label='Return to home page'>
       <Icon
         name='ph:hand-waving-light'
@@ -65,7 +65,6 @@ const navLinks = [
     gap: var(--size-fluid-4);
     background-color: var(--clr-banner);
     color: hsl(var(--clr-text));
-    backdrop-filter: blur(1rem);
     position: sticky;
     top: 0;
     z-index: var(--layer-3);
@@ -83,7 +82,7 @@ const navLinks = [
   }
   .header__logo {
     margin-right: 0.2em;
-    transition: transform 120ms ease;
+    transition: transform 120ms var(--ease-3);
   }
   .header__title:hover .header__logo {
     transform: rotate(20deg);
@@ -110,7 +109,7 @@ const navLinks = [
     right: 0;
     transform: scale(0, 1);
     transform-origin: left;
-    transition: transform 200ms ease-out;
+    transition: transform 200ms var(--ease-out-2);
   }
 
   .header__nav-link:hover::before {
@@ -141,12 +140,11 @@ const navLinks = [
       flex-direction: column;
       align-items: center;
       padding-top: min(25vh, 10rem);
-      background-color: hsl(var(--clr-bg) / 80%);
+      background-color: hsl(var(--clr-bg) / 60%);
       backdrop-filter: blur(1rem);
       opacity: 0;
-      z-index: var(--layer-4);
       transform: translate(100%, -100%);
-      transition: all 200ms ease-out;
+      transition: all 200ms var(--ease-out-3);
     }
 
     .header__nav[aria-expanded='true'] {
@@ -172,9 +170,12 @@ const navLinks = [
   const navToggle = document.querySelector('.btn--nav-toggle')
   navToggle.addEventListener('click', () => {
     const visibility = primaryNav.getAttribute('aria-expanded')
+    const header = document.querySelector('.header')
     primaryNav.setAttribute(
       'aria-expanded',
       visibility === 'false' ? 'true' : 'false'
     )
+
+    header.classList.toggle('blurred')
   })
 </script>

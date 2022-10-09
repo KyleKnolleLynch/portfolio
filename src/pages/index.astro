@@ -117,14 +117,14 @@ import { Icon } from 'astro-icon'
     font-size: var(--font-size-fluid-1);
     font-weight: var(--font-weight-9);
     color: hsl(var(--clr-bg));
-    background-color: hsl(var(--accent));
+    background-color: hsl(var(--clr-accent));
     border-radius: var(--radius-2);
     transform: matrix(1, -0.08, 0, 0.99, 0, 0);
-    transition: background-color 150ms ease-in-out;
+    transition: background-color 150ms var(--ease-out-3);
   }
 
   .projects__link:hover {
-    background-color: hsl(var(--accent-dark));
+    background-color: hsl(var(--clr-accent-highlight));
   }
 
   .skills__icons {
@@ -167,14 +167,14 @@ import { Icon } from 'astro-icon'
     gap: 0.6em;
     margin: 0.8em 0 0 2ch;
     padding: var(--size-2);
-    color: hsl(var(--accent));
+    color: hsl(var(--clr-accent));
     border-radius: var(--radius-2);
     text-decoration: none;
-    transition: 200ms ease-in-out;
+    transition: 200ms var(--ease-out-3);
   }
 
   .weblinks__list-link:hover {
-    background-color: hsl(var(--accent-dark) / 0.4);
+    background-color: hsl(var(--clr-accent-highlight) / 0.3);
     text-decoration: underline;
   }
 </style>
