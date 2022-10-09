@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Icon from 'astro-icon'
+---
+<Layout title='Miami Travel Project'>
+    <section class='project-page'>
+        <a href="/projects" aria-label='Visit my projects page' class='project-page__back-link'>Projects</a><span>&gt;</span> <h1 class='project-page__title'>Miami Travel</h1>
+        <p class='project-page__desc indent mt-2'>A mock travel website with API calls for weather and livecam data, custom image carousel with React/JS, and uses the intersection observer for styling background images with gradients.</p>
+        <ul class='project-page__list'>
+            <li class='project-page__list-item'><small class='project-page__list-tag'>STACK</small>React, context api, Framer Motion, SASS</li>
+            <li class='project-page__list-item'><small class='project-page__list-tag'>WEBSITE</small><a href='https://miami-travel.netlify.app/' target='_blank' rel='noopener'>https://miami-travel.netlify.app/ <Icon name='fe:link-external' width={24} class='project-page__list-icon' /></a></li>
+            <li class='project-page__list-item'><small class='project-page__list-tag'>CODE</small><a href='https://github.com/kyleknollelynch/miami-travel' target='_blank' rel='noopener'>https://github.com/kyleknollelynch/miami-travel <Icon name='github' width={16} class='project-page__list-icon' /></a></li>
+            
+        </ul>
+        <img src="/assets/miami_travel.webp" alt='miami_travel_project' class='project-page__img' />
+    </section>
+</Layout>

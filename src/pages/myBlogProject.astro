@@ -2,13 +2,14 @@
 import Layout from '../layouts/Layout.astro'
 import Icon from 'astro-icon'
 ---
-<Layout title='Kyle&apos;s Blog Project'>
+<Layout title='Blog Project'>
     <section class='project-page'>
         <a href="/projects" aria-label='Visit my projects page' class='project-page__back-link'>Projects</a><span>&gt;</span> <h1 class='project-page__title'>My Blog</h1>
         <p class='project-page__desc indent mt-2'>A blog website with great SEO and user friendly content management via Contentful's rich text editor. Easily customizable color scheme with use of CSS custom properties.</p>
         <ul class='project-page__list'>
             <li class='project-page__list-item'><small class='project-page__list-tag'>STACK</small>Next.js, Contentful CMS, Styled JSX, CSS</li>
             <li class='project-page__list-item'><small class='project-page__list-tag'>WEBSITE</small><a href='https://kylelynch-blog.vercel.app' target='_blank' rel='noopener'>https://kylelynch-blog.vercel.app/ <Icon name='fe:link-external' width={24} class='project-page__list-icon' /></a></li>
+            <li class='project-page__list-item'><small class='project-page__list-tag'>CODE</small><a href='https://github.com/KyleKnolleLynch/my_contentful_blog' target='_blank' rel='noopener'>https://github.com/KyleKnolleLynch/my_contentful_blog <Icon name='github' width={16} class='project-page__list-icon' /></a></li>
         </ul>
         <img src="/assets/blog.webp" alt='my_blog_project' class='project-page__img' />
     </section>

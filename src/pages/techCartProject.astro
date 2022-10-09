@@ -2,13 +2,14 @@
 import Layout from '../layouts/Layout.astro'
 import Icon from 'astro-icon'
 ---
-<Layout title='Kyle&apos;s Tech Cart Project'>
+<Layout title='Tech Cart Project'>
     <section class='project-page'>
         <a href="/projects" aria-label='Visit my projects page' class='project-page__back-link'>Projects</a><span>&gt;</span> <h1 class='project-page__title'>Tech Cart</h1>
         <p class='project-page__desc indent mt-2'>E-commerce shopping cart application for a mock tech shop. Originally I built it with pure React, and then refactored it using Next.js to better suit an e-commerce website's SEO needs in the real world.</p>
         <ul class='project-page__list'>
             <li class='project-page__list-item'><small class='project-page__list-tag'>STACK</small>Next.js, context api, Commerce.js CMS, TailwindCSS, React-Hook-Form</li>
             <li class='project-page__list-item'><small class='project-page__list-tag'>WEBSITE</small><a href='https://next-tech-cart.vercel.app' target='_blank' rel='noopener'>https://next-tech-cart.vercel.app/ <Icon name='fe:link-external' width={24} class='project-page__list-icon' /></a></li>
+            <li class='project-page__list-item'><small class='project-page__list-tag'>CODE</small><a href='https://github.com/KyleKnolleLynch/next-tech-cart' target='_blank' rel='noopener'>https://github.com/KyleKnolleLynch/next-tech-cart <Icon name='github' width={16} class='project-page__list-icon' /></a></li>
         </ul>
         <img src="/assets/tech_cart.webp" alt='my_blog_project' class='project-page__img' />
     </section>
