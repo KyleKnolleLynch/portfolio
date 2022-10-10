@@ -9,6 +9,11 @@
   padding: 0;
 }
 
+html {
+  height: stretch;
+  overflow-x: clip;
+}
+
 html:focus-within {
   scroll-behavior: smooth;
 }
@@ -17,16 +22,14 @@ body {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   max-width: 2000px;
   min-height: 100vh;
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
+  min-height: stretch;
   background-color: hsl(var(--clr-bg));
   color: hsl(var(--clr-text));
   font-weight: var(--font-weight-4);
   text-rendering: optimizeSpeed;
   line-height: var(--font-lineheight-3);
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ul[role='list'],
@@ -96,9 +99,8 @@ aside {
   /* Light Mode */
   --text-light: 220 26% 14%;
   --bg-light: 0 0% 99%;
-  --banner-light: hsl(var(--gray-0-hsl) / 40%);
+  --banner-light: hsl(var(--gray-3-hsl) / 30%);
   --bulb-light: var(--clr-secondary);
-  /* --test-dark: 87 49% 36%; */
 
   /* Dark Mode */
   --text-dark: 0 0% 93%;

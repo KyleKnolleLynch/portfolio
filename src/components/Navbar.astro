@@ -4,7 +4,7 @@ import ModeButton from './ModeButton.astro'
 const navLinks = [
   {
     name: 'Projects',
-    url: 'projects',
+    url: '/projects',
   },
   {
     name: 'About',
@@ -16,7 +16,7 @@ const navLinks = [
   },
   {
     name: 'Contact',
-    url: 'contact',
+    url: '/contact',
   },
 ]
 ---
@@ -72,7 +72,7 @@ const navLinks = [
 
   .header a {
     text-decoration: none;
-    font-weight: 700;
+    font-weight: var(--font-weight-7);
     color: hsl(var(--clr-text));
   }
 
@@ -139,6 +139,7 @@ const navLinks = [
       inset: 0;
       flex-direction: column;
       align-items: center;
+      gap: 1.5em;
       padding-top: min(25vh, 10rem);
       background-color: hsl(var(--clr-bg) / 60%);
       backdrop-filter: blur(1rem);

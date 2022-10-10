@@ -4,7 +4,15 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout>
   <h1>Reach out!</h1>
-  <form class='contact-form'>
+  <form
+    class='contact-form'
+    data-netlify='true'
+    name='contact'
+    method='POST'
+    data-netlify-honeypot='bot-field'
+    action='/success/'
+  >
+    <input name='bot-field' class='bot-input' />
     <div class='contact-form__form-group'>
       <label for='name'>Name</label>
       <input
@@ -72,6 +80,10 @@ import Layout from '../layouts/Layout.astro'
 
   .contact-form__btn:hover {
     background-color: hsl(var(--clr-accent-highlight));
+  }
+
+  .contact-form input.bot-input {
+    display: none;
   }
 
   @media (min-width: 768px) {
