@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+  <h1>Reach out!</h1>
+  <form class='contact-form'>
+    <div class='contact-form__form-group'>
+      <label for='name'>Name</label>
+      <input
+        type='text'
+        name='name'
+        id='name'
+        placeholder='full name'
+        minlength='2'
+        required
+      />
+    </div>
+    <div class='contact-form__form-group'>
+      <label for='email'>Email</label>
+      <input
+        type='email'
+        name='email'
+        id='email'
+        placeholder='yourmail@example.com'
+        required
+      />
+    </div>
+    <div class='contact-form__form-group'>
+      <label for='phone'>Phone <small>(optional)</small></label>
+      <input type='tel' name='phone' id='phone' placeholder='555-555-5555' />
+    </div>
+    <div class='contact-form__form-group'>
+      <label for='message'>Message</label>
+      <textarea
+        name='message'
+        id='message'
+        rows='7'
+        placeholder='your message'
+        minlength='3'
+        required></textarea>
+    </div>
+    <button class='btn contact-form__btn'>Send</button>
+  </form>
+</Layout>
+
+<style>
+  .contact-form {
+    margin-top: var(--size-4);
+  }
+
+  .contact-form__form-group {
+    margin-top: var(--size-fluid-2);
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    display: block;
+    padding: var(--size-1);
+    border: var(--border-size-1) solid var(--gray-5);
+    border-radius: var(--radius-2);
+  }
+
+  .contact-form__btn {
+    margin-top: var(--size-fluid-2);
+    padding: var(--size-2) var(--size-6);
+    background-color: hsl(var(--clr-accent));
+    font-weight: var(--font-weight-7);
+    border-radius: var(--radius-2);
+  }
+
+  .contact-form__btn:hover {
+    background-color: hsl(var(--clr-accent-highlight));
+  }
+
+  @media (min-width: 768px) {
+    .contact-form {
+      padding: var(--size-4);
+      border-radius: var(--radius-2);
+      box-shadow: var(--shadow-3);
+    }
+  }
+</style>
