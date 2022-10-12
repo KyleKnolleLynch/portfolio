@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Icon from 'astro-icon'
+---
+
+<Layout title='Previous Portfolio'>
+  <section class='project-page'>
+    <a
+      href='/projects'
+      aria-label='Visit my projects page'
+      class='project-page__back-link'>Projects</a
+    ><span>&gt;</span>
+    <h1 class='project-page__title'>My Previous Portfolio</h1>
+    <p class='project-page__desc indent mt-2'>
+      My first portfolio site, I focused on style and performance, proudly getting it to score 100 on Google's Lighthouse developer tools audit. Featuring smooth transitions, custom cursor using context API, and optimized image implementation.
+    </p>
+    <ul class='project-page__list'>
+      <li class='project-page__list-item'>
+        <small class='project-page__list-tag'>STACK</small>React, SCSS, React
+        Transition Group, React Visibility Sensor, Context API
+      </li>
+      <li class='project-page__list-item'>
+        <small class='project-page__list-tag'>WEBSITE</small><a
+          href='https://kylelynch-portfolio.netlify.app/'
+          target='_blank'
+          rel='noopener'
+          >https://kylelynch-portfolio.netlify.app/ <Icon
+            name='fe:link-external'
+            width={24}
+            class='project-page__list-icon'
+          />
+        </a>
+      </li>
+      <li class='project-page__list-item'>
+        <small class='project-page__list-tag'>CODE</small><a
+          href='https://github.com/KyleKnolleLynch/My_Portfolio'
+          target='_blank'
+          rel='noopener'
+          >https://github.com/KyleKnolleLynch/My_Portfolio <Icon
+            name='github'
+            width={16}
+            class='project-page__list-icon'
+          />
+        </a>
+      </li>
+    </ul>
+    <img
+      src='/assets/old_portfolio.webp'
+      alt='my_previous_portfolio'
+      class='project-page__img'
+    />
+  </section>
+</Layout>

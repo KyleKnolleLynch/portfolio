@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Icon from 'astro-icon'
+---
+<Layout title='Smoothie Builder Project'>
+    <section class='project-page'>
+        <a href="/projects" aria-label='Visit my projects page' class='project-page__back-link'>Projects</a><span>&gt;</span> <h1 class='project-page__title'>Smoothie Builder</h1>
+        <p class='project-page__desc indent mt-2'>Multi-step smoothie ordering app using context API for state management between pages/steps and price totalling.</p>
+        <ul class='project-page__list'>
+            <li class='project-page__list-item'><small class='project-page__list-tag'>STACK</small>React, SCSS, Framer Motion</li>
+            <li class='project-page__list-item'><small class='project-page__list-tag'>WEBSITE</small><a href='https://smoothie-builder.netlify.app/' target='_blank' rel='noopener'>https://smoothie-builder.netlify.app/ <Icon name='fe:link-external' width={24} class='project-page__list-icon' /></a></li>
+            <li class='project-page__list-item'><small class='project-page__list-tag'>CODE</small><a href='https://github.com/kyleknollelynch/smoothie_builder' target='_blank' rel='noopener'>https://github.com/kyleknollelynch/smoothie_builder <Icon name='github' width={16} class='project-page__list-icon' /></a></li>
+        </ul>
+        <img src="/assets/smoothie_builder.webp" alt='my_blog_project' class='project-page__img' />
+    </section>
+</Layout>
+

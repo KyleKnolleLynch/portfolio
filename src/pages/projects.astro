@@ -2,19 +2,19 @@
 import Layout from '../layouts/Layout.astro'
 const projects = [
   {
-    url: 'myBlogProject',
+    url: '/myBlogProject',
     img: '/assets/blog.webp',
     title: 'My Blog',
     desc: 'A customizable blog site using Contentful CMS',
   },
   {
-    url: 'techCartProject',
+    url: '/techCartProject',
     img: '/assets/tech_cart.webp',
     title: 'Tech Cart',
     desc: 'An e-commerce shopping cart for a mock tech shop',
   },
   {
-    url: 'miamiTravelProject',
+    url: '/miamiTravelProject',
     img: '/assets/miami_travel.webp',
     title: 'Miami Travel',
     desc: 'A mock travel website with live weather and cam feeds',
@@ -22,19 +22,19 @@ const projects = [
 ]
 const olderProjects = [
   {
-    url: '#',
+    url: '/smoothieBuilder',
     img: '/assets/smoothie_builder.webp',
     title: 'Smoothie Builder',
     desc: 'A multi-step smoothie building cart app',
   },
   {
-    url: '#',
+    url: '/previousPortfolio',
     img: '/assets/old_portfolio.webp',
     title: 'Previous Portfolio',
     desc: 'My previous portfolio website',
   },
   {
-    url: '#',
+    url: 'https://kyleknollelynch.github.io/restaurant-menu-js/',
     img: '/assets/menu.webp',
     title: 'Menu App',
     desc: 'Food menu with filter buttons',
@@ -90,7 +90,8 @@ const olderProjects = [
 <style>
   .projects-grid {
     row-gap: var(--size-8);
-    margin-block: var(--size-2) var(--size-10);
+    margin-block: 0.5em 5em;
+    
   }
 
   .project-card {

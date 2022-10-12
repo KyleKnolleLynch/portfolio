@@ -1,0 +1,145 @@
+---
+import { list } from 'postcss'
+import Layout from '../layouts/Layout.astro'
+
+const software = [
+  {
+    name: 'Code-OSS (open source fork of Visual Studio Code)',
+  },
+  {
+    name: 'Alacritty Terminal',
+  },
+  {
+    name: 'Chromium Browser/Google Chrome (Devtools and React/Redux Devtools)',
+  },
+  {
+    name: 'Librewolf (open source fork of Firefox)',
+  },
+  {
+    name: 'Postman',
+  },
+]
+
+const graphicsVideo = [
+  {
+    name: 'Gimp',
+  },
+  {
+    name: 'Figma',
+  },
+  {
+    name: 'Kdenlive',
+  },
+  {
+    name: 'OBS Studio',
+  },
+  {
+    name: 'Flameshot',
+  },
+]
+
+const computer = [
+  {
+    name: 'Arcolinux (Desktop environment: LXQT, Window manager: xfwm4)',
+  },
+  {
+    name: 'Windows 10 (If I need to)',
+  },
+  {
+    name: 'Intel i7-8700K overclocked to 5ghz',
+  },
+  {
+    name: 'Gigabyte Aorus z370 7 motherboard',
+  },
+  {
+    name: '16gb G.Skill TridentZ DDR4-3200 CL14-14-14-34',
+  },
+  {
+    name: 'Zotac 1070 GPU',
+  },
+  {
+    name: 'Samsung and Adata PCIe Gen-4 m.2 SSDs',
+  },
+  {
+    name: 'Lian Li 011 Air Case',
+  },
+]
+
+const peripherals = [
+  {
+    name: 'Razer Blackwidow Chroma X (Green switches) keyboard',
+  },
+  {
+    name: 'Roccat Kain 120 AIMO mouse',
+  },
+  {
+    name: 'Audio Technica AT2020+ USB microphone w/ boom arm',
+  },
+  {
+    name: 'Audio Technica ATH-M20x headphones',
+  },
+  {
+    name: 'Asus MX279 27" 1080p monitor',
+  },
+  {
+    name: 'Viofo P800 1080p webcam',
+  },
+]
+
+const codeOssTheme = [
+  {
+    name: 'Color Theme: Rainglow Darkside Contrast (mostly)',
+  },
+  {
+    name: 'Editor Font: JetBrainsMono Nerd Font',
+  },
+  {
+    name: 'Termial Font: Iosevka Term',
+  },
+  {
+    name: 'File Icon Theme: VSCode Great Icons',
+  },
+]
+---
+
+<Layout>
+  <h1 class='uses__title'>Things I use.</h1>
+  <h2 class='uses__subheading'>Software</h2>
+  <ul class='uses__list'>
+    {software.map(i => <li>{i.name}</li>)}
+  </ul>
+
+  <h2 class='uses__subheading'>Graphics / Video</h2>
+  <ul class='uses__list'>
+    {graphicsVideo.map(i => <li>{i.name}</li>)}
+  </ul>
+
+  <h2 class='uses__subheading'>Computer</h2>
+  <ul class='uses__list'>
+    {computer.map(i => <li>{i.name}</li>)}
+  </ul>
+
+  <h2 class='uses__subheading'>Peripherals</h2>
+  <ul class='uses__list'>
+    {peripherals.map(i => <li>{i.name}</li>)}
+  </ul>
+
+  <h2 class='uses__subheading'>Code-OSS Theme</h2>
+  <ul class='uses__list'>
+    {codeOssTheme.map(i => <li>{i.name}</li>)}
+  </ul>
+</Layout>
+
+<style>
+  .uses__title {
+    margin-bottom: var(--size-4);
+  }
+
+  .uses__subheading {
+    margin-top: var(--size-4);
+  }
+
+  .uses__list {
+    list-style-type: none;
+  }
+</style>

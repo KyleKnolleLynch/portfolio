@@ -12,7 +12,7 @@ const navLinks = [
   },
   {
     name: 'Uses',
-    url: '#',
+    url: '/uses',
   },
   {
     name: 'Contact',
@@ -34,7 +34,7 @@ const navLinks = [
     <ul class='header__nav' id='primary-navigation' aria-expanded='false'>
       {
         navLinks.map(link => (
-          <li role='none'>
+          <li>
             <a href={link.url} class='header__nav-link' aria-label={`Visit ${link.name} page`}>
               {link.name}
             </a>
@@ -51,7 +51,7 @@ const navLinks = [
       aria-label='Open mobile navigation'
       aria-controls='primary-navigation'
     >
-      <Icon pack='ph' name='list' width={24} />
+      <Icon name='ph:list' width={24} />
     </button>
   </div>
 </header>
@@ -90,7 +90,7 @@ const navLinks = [
   .header__nav {
     display: flex;
     gap: 1em;
-    list-style: none;
+    list-style-type: none;
   }
 
   .header__nav-link {

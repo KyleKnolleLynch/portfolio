@@ -1,16 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { Icon } from 'astro-icon'
 ---
 
-<Layout>
-    <h1>Reach out!</h1>
-    <p class='success-text'>Thank you, your submission was received! I will get back to you shortly.</p>
+<Layout title='Submission success'>
+  <h1>Reach out!</h1>
+  <p class='success-text'>
+    Thank you, your submission was received! I will get back to you shortly.
+  </p>
+  <div class='success__backlink-wrapper'>
+    <Icon name='ph:arrow-arc-left-light' width={28} />
+    <a href='/' class='backlink'>Go back</a>
+  </div>
 </Layout>
 
 <style>
-    .success-text {
-        margin-top: var(--size-2);
-        font-size: var(--font-size-3);
-    }
-</style>
+  .success-text {
+    margin-top: var(--size-4);
+    font-size: var(--font-size-3);
+  }
 
+  .success__backlink-wrapper {
+    margin-top: var(--size-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .backlink {
+    margin-left: var(--size-2);
+    color: hsl(var(--clr-text));
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-7);
+    transition: 200ms var(--ease-in-1);
+}
+
+.backlink:hover {
+    -webkit-text-stroke: 1px hsl(var(--clr-text));
+    text-stroke: 1px hsl(var(--clr-text));
+    color: hsl(var(--clr-bg));
+  }
+</style>
