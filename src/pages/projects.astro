@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+const title = "Kyle's Projects"
 const projects = [
   {
     url: '/myBlogProject',
@@ -33,16 +34,10 @@ const olderProjects = [
     title: 'Previous Portfolio',
     desc: 'My previous portfolio website',
   },
-  {
-    url: 'https://kyleknollelynch.github.io/restaurant-menu-js/',
-    img: '/assets/menu.webp',
-    title: 'Menu App',
-    desc: 'Food menu with filter buttons',
-  }
 ]
 ---
 
-<Layout title='Kyle&apos;s Projects'>
+<Layout title={title}>
   <h2>Projects</h2>
   <section class='projects-grid grid-2'>
     {
@@ -91,7 +86,6 @@ const olderProjects = [
   .projects-grid {
     row-gap: var(--size-8);
     margin-block: 0.5em 5em;
-    
   }
 
   .project-card {

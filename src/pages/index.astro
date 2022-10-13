@@ -4,9 +4,10 @@ import Hero from '../components/Hero.astro'
 import skillsIcons from '../data/skillsIcons.json'
 import toolsIcons from '../data/toolsIcons.json'
 import { Icon } from 'astro-icon'
+const title = "Kyle's Portfolio | About"
 ---
 
-<Layout title='Kyle&apos;s Portfolio'>
+<Layout title={title}>
   <Hero />
   <section class='projects'>
     <h2 class='section__heading'>Work and Projects</h2>
@@ -63,15 +64,16 @@ import { Icon } from 'astro-icon'
           href='https://github.com/KyleKnolleLynch'
           class='weblinks__list-link'
           target='_blank'
-          rel='noopener'><span><Icon name='github' /></span>@KyleKnolleLynch</a>
+          rel='noopener'><span><Icon name='github' /></span>@KyleKnolleLynch</a
+        >
       </li>
       <li>
         <a
           href='https://codepen.io/kyleknollelynch'
           class='weblinks__list-link'
           target='_blank'
-          rel='noopener'
-          ><span><Icon name='codepen' /></span>@kyleknollelynch</a>
+          rel='noopener'><span><Icon name='codepen' /></span>@kyleknollelynch</a
+        >
       </li>
     </ul>
   </section>

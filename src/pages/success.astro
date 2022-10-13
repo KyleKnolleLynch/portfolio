@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { Icon } from 'astro-icon'
+const title = 'Submission success'
 ---
 
-<Layout title='Submission success'>
+<Layout title={title}>
   <h1>Reach out!</h1>
   <p class='success-text'>
     Thank you, your submission was received! I will get back to you shortly.
@@ -33,9 +34,9 @@ import { Icon } from 'astro-icon'
     font-size: var(--font-size-4);
     font-weight: var(--font-weight-7);
     transition: 200ms var(--ease-in-1);
-}
+  }
 
-.backlink:hover {
+  .backlink:hover {
     -webkit-text-stroke: 1px hsl(var(--clr-text));
     text-stroke: 1px hsl(var(--clr-text));
     color: hsl(var(--clr-bg));

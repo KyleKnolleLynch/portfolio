@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Icon from 'astro-icon'
+const title = 'Previous Portfolio'
 ---
 
-<Layout title='Previous Portfolio'>
+<Layout title={title}>
   <section class='project-page'>
     <a
       href='/projects'
@@ -12,7 +13,10 @@ import Icon from 'astro-icon'
     ><span>&gt;</span>
     <h1 class='project-page__title'>My Previous Portfolio</h1>
     <p class='project-page__desc indent mt-2'>
-      My first portfolio site, I focused on style and performance, proudly getting it to score 100 on Google's Lighthouse developer tools audit. Featuring smooth transitions, custom cursor using context API, and optimized image implementation.
+      My first portfolio site, I focused on style and performance, proudly
+      getting it to score 100 on Google's Lighthouse developer tools audit.
+      Featuring smooth transitions, custom cursor using context API, and
+      optimized image implementation.
     </p>
     <ul class='project-page__list'>
       <li class='project-page__list-item'>
