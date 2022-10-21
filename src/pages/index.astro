@@ -8,6 +8,9 @@ const title = "Kyle's Portfolio | About"
 ---
 
 <Layout title={title}>
+  <!-- <section class='coder'>
+    <Icon name='coder' width='400px' />
+  </section> -->
   <Hero />
   <section class='projects'>
     <h2 class='section__heading'>Work and Projects</h2>
@@ -63,6 +66,7 @@ const title = "Kyle's Portfolio | About"
         <a
           href='https://github.com/KyleKnolleLynch'
           class='weblinks__list-link'
+          aria-label='Visit my GitHub prolile'
           target='_blank'
           rel='noopener'><span><Icon name='github' /></span>@KyleKnolleLynch</a
         >
@@ -71,6 +75,7 @@ const title = "Kyle's Portfolio | About"
         <a
           href='https://codepen.io/kyleknollelynch'
           class='weblinks__list-link'
+          aria-label='Visit my Codepen profile'
           target='_blank'
           rel='noopener'><span><Icon name='codepen' /></span>@kyleknollelynch</a
         >
@@ -87,6 +92,12 @@ const title = "Kyle's Portfolio | About"
 </Layout>
 
 <style>
+  /* .coder {
+    margin-block: var(--size-8) var(--size-10);
+    display: flex;
+    justify-content: center;
+  } */
+
   .section__heading {
     margin-top: var(--size-8);
     display: inline-block;
@@ -121,12 +132,13 @@ const title = "Kyle's Portfolio | About"
     color: hsl(var(--clr-bg));
     background-color: hsl(var(--clr-accent));
     border-radius: var(--radius-2);
+    box-shadow: var(--shadow-3);
     transform: matrix(1, -0.08, 0, 0.99, 0, 0);
     transition: background-color 150ms var(--ease-out-3);
   }
 
   .projects__link:hover {
-    background-color: hsl(var(--clr-accent-highlight));
+    background-color: hsl(var(--clr-accent) / 0.8);
   }
 
   .skills__icons {
@@ -155,6 +167,11 @@ const title = "Kyle's Portfolio | About"
     height: auto;
   }
 
+  [astro-icon='coder'] {
+    width: 70%;
+    height: auto;
+  }
+
   .education__list {
     margin-left: var(--size-3);
   }
@@ -171,12 +188,13 @@ const title = "Kyle's Portfolio | About"
     padding: var(--size-2);
     color: hsl(var(--clr-accent));
     border-radius: var(--radius-2);
+    font-weight: var(--font-weight-7);
     text-decoration: none;
     transition: 200ms var(--ease-out-3);
   }
 
   .weblinks__list-link:hover {
-    background-color: hsl(var(--clr-accent-highlight) / 0.3);
+    background-color: hsl(var(--clr-accent) / 0.3);
     text-decoration: underline;
   }
 </style>

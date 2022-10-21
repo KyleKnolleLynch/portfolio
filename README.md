@@ -1,4 +1,5 @@
-# My new portfolio site (WIP)
+# My updated portfolio website
 
-* astro
-* open props
+Built with Astro and Open Props.
+
+Visit [kylelynch.me](https://kylelynch.me) and check out the site!

@@ -111,22 +111,23 @@ aside {
 :root {
   /* COLORS */
 
-  /* common */
-  --clr-accent: 138 97% 45%;
-  --clr-accent-highlight: 141 62% 61%;
-  --clr-secondary: 288 36% 46%;
-
   /* Light Mode */
   --text-light: 220 26% 14%;
   --bg-light: 0 0% 99%;
-  --banner-light: hsl(var(--gray-3-hsl) / 30%);
-  --bulb-light: var(--clr-secondary);
+  --accent-light: 118 88% 26%;
+  --secondary-light: 209 67% 65%;
+  --banner-light: hsl(var(--gray-9-hsl) / 5%);
+  --bulb-light: 269 42% 56%;
+  --footer-light: 0 0% 45%;
 
   /* Dark Mode */
   --text-dark: 0 0% 93%;
   --bg-dark: 240 4% 13%;
+  --accent-dark: 71 71% 52%;
+  --secondary-dark: 209 67% 40%;
   --banner-dark: hsl(var(--gray-0-hsl) / 4%);
   --bulb-dark: 245 8% 71%;
+  --footer-dark: 0 0% 53%;
 }
 
 /* Dark/Light Mode System Changer */
@@ -134,8 +135,11 @@ aside {
   :root {
     --clr-text: var(--text-light);
     --clr-bg: var(--bg-light);
+    --clr-accent: var(--accent-light);
+    --clr-secondary: var(--secondary-light);
     --clr-banner: var(--banner-light);
     --clr-bulb: var(--bulb-light);
+    --clr-footer: var(--footer-light);
     color-scheme: light;
   }
 }
@@ -144,8 +148,11 @@ aside {
   :root {
     --clr-text: var(--text-dark);
     --clr-bg: var(--bg-dark);
+    --clr-accent: var(--accent-dark);
+    --clr-secondary: var(--secondary-dark);
     --clr-banner: var(--banner-dark);
     --clr-bulb: var(--bulb-dark);
+    --clr-footer: var(--footer-dark);
     color-scheme: dark;
   }
 }
@@ -153,16 +160,22 @@ aside {
 :root[color-scheme='light'] {
   --clr-text: var(--text-light);
   --clr-bg: var(--bg-light);
+  --clr-accent: var(--accent-light);
+  --clr-secondary: var(--secondary-light);
   --clr-banner: var(--banner-light);
   --clr-bulb: var(--bulb-light);
+  --clr-footer: var(--footer-light);
   color-scheme: light;
 }
 
 :root[color-scheme='dark'] {
   --clr-text: var(--text-dark);
   --clr-bg: var(--bg-dark);
+  --clr-accent: var(--accent-dark);
+  --clr-secondary: var(--secondary-dark);
   --clr-banner: var(--banner-dark);
   --clr-bulb: var(--bulb-dark);
+  --clr-footer: var(--footer-dark);
   color-scheme: dark;
 }
 
@@ -227,7 +240,7 @@ aside {
   font-weight: 700;
   vertical-align: top;
   border-radius: var(--radius-1);
-  background-color: hsl(var(--clr-secondary) / 0.8);
+  background-color: hsl(var(--clr-secondary));
 }
 
 .project-page a {
@@ -247,6 +260,7 @@ aside {
 .project-page__img {
   margin-top: var(--size-4);
   border-radius: var(--radius-2);
+  box-shadow: var(--shadow-2);
 }
 
 @media (min-width: 768px) {
